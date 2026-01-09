@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chealwin Winstons | CNC Specialist & Photographer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-mesh {
+            background-color: #020617;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(225, 100%, 15%, 1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(270, 100%, 10%, 1) 0, transparent 50%);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .pill-active {
+            @apply bg-indigo-600 text-white shadow-lg shadow-indigo-900/40 border-indigo-400/30;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            border-color: rgba(99, 102, 241, 0.4);
+            background: rgba(30, 41, 59, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200 antialiased selection:bg-indigo-500/30">
+
+    <div class="hero-mesh min-h-screen">
+        <!-- Modern Nav -->
+        <nav class="fixed top-0 w-full z-50 px-6 py-4">
+            <div class="max-w-6xl mx-auto flex items-center justify-between glass rounded-2xl px-6 h-14">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center font-bold text-white">C</div>
+                    <span class="font-bold tracking-tight text-white hidden sm:block">Winstons</span>
+                </div>
+                
+                <!-- Language Switcher Pill -->
+                <div class="flex items-center bg-slate-900/80 p-1 rounded-full border border-white/5">
+                    <button id="btn-en" onclick="switchLang('en')" class="px-3 py-1 rounded-full text-[10px] font-bold transition-all pill-active uppercase">EN</button>
+                    <button id="btn-zh" onclick="switchLang('zh')" class="px-3 py-1 rounded-full text-[10px] font-bold transition-all text-slate-400 hover:text-white uppercase">ZH</button>
+                    <button id="btn-it" onclick="switchLang('it')" class="px-3 py-1 rounded-full text-[10px] font-bold transition-all text-slate-400 hover:text-white uppercase">IT</button>
+                    <button id="btn-de" onclick="switchLang('de')" class="px-3 py-1 rounded-full text-[10px] font-bold transition-all text-slate-400 hover:text-white uppercase">DE</button>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-6 text-xs font-semibold uppercase tracking-widest">
+                    <a href="#about" class="hover:text-indigo-400 transition-colors" data-t="nav-about">About</a>
+                    <a href="#experience" class="hover:text-indigo-400 transition-colors" data-t="nav-exp">Experience</a>
+                    <a href="#contact" class="hover:text-indigo-400 transition-colors" data-t="nav-contact">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero -->
+        <header class="pt-48 pb-32 px-6 max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-[10px] font-bold uppercase tracking-widest mb-8 fade-in" data-t="hero-tag">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                </span>
+                <span>CNC Operator & Photographer</span>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-bold text-white mb-6 tracking-tighter fade-in">
+                <span data-t="hero-greet">I am</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Chealwin</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 mb-12 leading-relaxed fade-in" data-t="hero-sub">
+                Specializing in CNC precision processing and visual storytelling. Engineering discipline meets creative vision.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in">
+                <a href="#contact" class="w-full sm:w-auto bg-white text-slate-950 px-8 py-4 rounded-xl font-bold hover:bg-indigo-50 transition-all flex items-center justify-center group">
+                    <span data-t="hero-cta-1">Start a Project</span>
+                    <i data-lucide="arrow-right" class="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="#experience" class="w-full sm:w-auto glass text-white px-8 py-4 rounded-xl font-bold hover:bg-white/5 transition-all" data-t="hero-cta-2">
+                    View Experience
+                </a>
+            </div>
+        </header>
+
+        <!-- Stats/Awards -->
+        <section class="pb-24 px-6 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass p-8 rounded-3xl card-hover transition-all">
+                    <div class="text-indigo-500 mb-4"><i data-lucide="award" class="h-8 w-8"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2" data-t="award-1-t">1st Runner Up</h3>
+                    <p class="text-slate-400 text-sm" data-t="award-1-d">Buddhist Short Movie Award 2020. Excellence in cinematography.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl card-hover transition-all">
+                    <div class="text-purple-500 mb-4"><i data-lucide="binary" class="h-8 w-8"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2" data-t="award-2-t">IT Specialist</h3>
+                    <p class="text-slate-400 text-sm" data-t="award-2-d">Information Technology at National Chin Yi University.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl card-hover transition-all">
+                    <div class="text-pink-500 mb-4"><i data-lucide="camera" class="h-8 w-8"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2" data-t="award-3-t">Visual Artist</h3>
+                    <p class="text-slate-400 text-sm" data-t="award-3-d">Combining technical precision with professional photography.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="py-24 px-6 max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/3">
+                    <h2 class="text-3xl font-bold text-white mb-4" data-t="exp-title">Industrial Experience</h2>
+                    <p class="text-slate-400" data-t="exp-intro">Operating at the intersection of manufacturing and technology.</p>
+                </div>
+                <div class="md:w-2/3 space-y-8">
+                    <div class="glass p-8 rounded-3xl relative">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">VP Component</h3>
+                                <p class="text-indigo-400 font-semibold" data-t="exp-role">CNC Machine Operator</p>
+                            </div>
+                            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest" data-t="exp-loc">Taichung, Taiwan</span>
+                        </div>
+                        <p class="text-slate-300 mb-6 leading-relaxed" data-t="exp-p">
+                            Responsible for the pedal cutting and processing line. Managed high-precision CNC machinery ensuring sub-millimeter accuracy for global bicycle components.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center space-x-2 text-xs text-slate-400">
+                                <i data-lucide="check-circle" class="h-4 w-4 text-indigo-500"></i>
+                                <span data-t="sk-1">Precision Cutting</span>
+                            </div>
+                            <div class="flex items-center space-x-2 text-xs text-slate-400">
+                                <i data-lucide="check-circle" class="h-4 w-4 text-indigo-500"></i>
+                                <span data-t="sk-2">SOP Compliance</span>
+                            </div>
+                            <div class="flex items-center space-x-2 text-xs text-slate-400">
+                                <i data-lucide="check-circle" class="h-4 w-4 text-indigo-500"></i>
+                                <span data-t="sk-3">Quality Control</span>
+                            </div>
+                            <div class="flex items-center space-x-2 text-xs text-slate-400">
+                                <i data-lucide="check-circle" class="h-4 w-4 text-indigo-500"></i>
+                                <span data-t="sk-4">Troubleshooting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="py-24 px-6 max-w-4xl mx-auto text-center">
+            <div class="glass p-12 rounded-[3rem] border-indigo-500/20">
+                <h2 class="text-4xl font-bold text-white mb-4" data-t="contact-title">Ready for the Next Milestone?</h2>
+                <p class="text-slate-400 mb-10" data-t="contact-p">Available for roles in Technical Manufacturing or Creative Media.</p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="mailto:Wnstns@gmail.com" class="flex items-center space-x-3 text-white hover:text-indigo-400 transition-colors">
+                        <i data-lucide="mail" class="h-5 w-5"></i>
+                        <span class="text-sm font-semibold">Wnstns@gmail.com</span>
+                    </a>
+                    <div class="flex items-center space-x-3 text-white">
+                        <i data-lucide="phone" class="h-5 w-5"></i>
+                        <span class="text-sm font-semibold">(886) 900 889 911</span>
+                    </div>
+                </div>
+            </div>
+            <footer class="mt-12 text-slate-500 text-[10px] uppercase tracking-[0.2em]" data-t="footer">
+                &copy; 2024 Chealwin Winstons. Built for Excellence.
+            </footer>
+        </section>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                "nav-about": "About", "nav-exp": "Experience", "nav-contact": "Contact",
+                "hero-tag": "CNC Operator & Photographer", "hero-greet": "I am", "hero-sub": "Specializing in CNC precision processing and visual storytelling. Engineering discipline meets creative vision.",
+                "hero-cta-1": "Start a Project", "hero-cta-2": "View Experience",
+                "award-1-t": "1st Runner Up", "award-1-d": "Buddhist Short Movie Award 2020. Excellence in cinematography.",
+                "award-2-t": "IT Specialist", "award-2-d": "Information Technology at National Chin Yi University.",
+                "award-3-t": "Visual Artist", "award-3-d": "Combining technical precision with professional photography.",
+                "exp-title": "Industrial Experience", "exp-intro": "Operating at the intersection of manufacturing and technology.",
+                "exp-role": "CNC Machine Operator", "exp-loc": "Taichung, Taiwan", "exp-p": "Responsible for the pedal cutting and processing line. Managed high-precision CNC machinery ensuring sub-millimeter accuracy for global bicycle components.",
+                "sk-1": "Precision Cutting", "sk-2": "SOP Compliance", "sk-3": "Quality Control", "sk-4": "Troubleshooting",
+                "contact-title": "Ready for the Next Milestone?", "contact-p": "Available for roles in Technical Manufacturing or Creative Media.",
+                "footer": "© 2024 Chealwin Winstons. Built for Excellence."
+            },
+            zh: {
+                "nav-about": "關於", "nav-exp": "經歷", "nav-contact": "聯繫",
+                "hero-tag": "CNC 操作員與攝影師", "hero-greet": "我是", "hero-sub": "專注於 CNC 精密加工與視覺敘事。工程紀律與創意願景的完美結合。",
+                "hero-cta-1": "開始合作", "hero-cta-2": "查看經驗",
+                "award-1-t": "亞軍獲獎者", "award-1-d": "2020年佛教短片獎。卓越的電影攝影表現。",
+                "award-2-t": "IT 專家", "award-2-d": "國立勤益科技大學資訊工程系。",
+                "award-3-t": "視覺藝術家", "award-3-d": "將技術精準度與專業攝影相結合。",
+                "exp-title": "工業經驗", "exp-intro": "在製造與技術的交匯點上運作。",
+                "exp-role": "CNC 機器操作員", "exp-loc": "台灣 台中", "exp-p": "負責踏板切割與加工生產線。管理高精度 CNC 機械，確保全球自行車零件的亞毫米級精度。",
+                "sk-1": "精密切割", "sk-2": "SOP 合規", "sk-3": "質量控制", "sk-4": "故障排除",
+                "contact-title": "準備好迎接下一個里程碑了嗎？", "contact-p": "目前可勝任技術製造或創意媒體相關職位。",
+                "footer": "© 2024 Chealwin Winstons. 為卓越而建。"
+            },
+            it: {
+                "nav-about": "Chi Sono", "nav-exp": "Esperienza", "nav-contact": "Contatti",
+                "hero-tag": "Operatore CNC & Fotografo", "hero-greet": "Io sono", "hero-sub": "Specializzato in lavorazione CNC di precisione e storytelling visivo. La disciplina ingegneristica incontra la visione creativa.",
+                "hero-cta-1": "Inizia Progetto", "hero-cta-2": "Esperienza",
+                "award-1-t": "Secondo Posto", "award-1-d": "Buddhist Short Movie Award 2020. Eccellenza nella cinematografia.",
+                "award-2-t": "Specialista IT", "award-2-d": "Information Technology presso National Chin Yi University.",
+                "award-3-t": "Artista Visivo", "award-3-d": "Unire precisione tecnica e fotografia professionale.",
+                "exp-title": "Esperienza Industriale", "exp-intro": "Operare all'intersezione tra produzione e tecnologia.",
+                "exp-role": "Operatore Macchine CNC", "exp-loc": "Taichung, Taiwan", "exp-p": "Responsabile della linea di taglio e lavorazione dei pedali. Gestione di macchinari CNC ad alta precisione.",
+                "sk-1": "Taglio Precisione", "sk-2": "Conformità SOP", "sk-3": "Controllo Qualità", "sk-4": "Risoluzione Problemi",
+                "contact-title": "Pronto per il Prossimo Traguardo?", "contact-p": "Disponibile per ruoli in Produzione Tecnica o Media Creativi.",
+                "footer": "© 2024 Chealwin Winstons. Costruito per l'Eccellenza."
+            },
+            de: {
+                "nav-about": "Über mich", "nav-exp": "Erfahrung", "nav-contact": "Kontakt",
+                "hero-tag": "CNC-Bediener & Fotograf", "hero-greet": "Ich bin", "hero-sub": "Spezialisiert auf CNC-Präzisionsverarbeitung und visuelles Storytelling. Ingenieursdisziplin trifft auf kreative Vision.",
+                "hero-cta-1": "Projekt starten", "hero-cta-2": "Erfahrung",
+                "award-1-t": "2. Sieger", "award-1-d": "Buddhist Short Movie Award 2020. Exzellenz in der Kinematografie.",
+                "award-2-t": "IT-Spezialist", "award-2-d": "Informationstechnologie an der National Chin Yi University.",
+                "award-3-t": "Visueller Künstler", "award-3-d": "Technische Präzision kombiniert mit Profi-Fotografie.",
+                "exp-title": "Industrieerfahrung", "exp-intro": "Arbeiten an der Schnittstelle von Fertigung und Technologie.",
+                "exp-role": "CNC-Maschinenbediener", "exp-loc": "Taichung, Taiwan", "exp-p": "Verantwortlich für die Pedalschneid- und Verarbeitungslinie. Bedienung von CNC-Präzisionsmaschinen.",
+                "sk-1": "Präzisionsschnitt", "sk-2": "SOP-Konformität", "sk-3": "Qualitätskontrolle", "sk-4": "Fehlersuche",
+                "contact-title": "Bereit für den nächsten Schritt?", "contact-p": "Verfügbar für Positionen in der technischen Fertigung oder in kreativen Medien.",
+                "footer": "© 2024 Chealwin Winstons. Gebaut für Exzellenz."
+            }
+        };
+
+        window.onload = function() {
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+
+            window.switchLang = function(lang) {
+                document.querySelectorAll('.lang-pill').forEach(b => {
+                    b.classList.remove('pill-active');
+                    b.classList.add('text-slate-400');
+                });
+                
+                // Toggle active button style
+                const btns = ['en', 'zh', 'it', 'de'];
+                btns.forEach(b => {
+                    const btn = document.getElementById(`btn-${b}`);
+                    if(b === lang) {
+                        btn.className = "px-3 py-1 rounded-full text-[10px] font-bold transition-all pill-active uppercase";
+                    } else {
+                        btn.className = "px-3 py-1 rounded-full text-[10px] font-bold transition-all text-slate-400 hover:text-white uppercase";
+                    }
+                });
+
+                const data = translations[lang];
+                document.querySelectorAll('[data-t]').forEach(el => {
+                    const key = el.getAttribute('data-t');
+                    if (data[key]) el.innerText = data[key];
+                });
+
+                document.documentElement.lang = lang;
+            }
+        };
+    </script>
+</body>
+</html>
